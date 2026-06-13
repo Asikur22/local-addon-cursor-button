@@ -1,0 +1,41 @@
+{
+	"name": "cursor-button",
+	"productName": "Cursor Button",
+	"version": "2.0.0",
+	"author": "Asiqur Rahman",
+	"keywords": [
+		"local-addon",
+		"cursor"
+	],
+	"bgColor": "#5E57E8",
+	"icon": "icon.png",
+	"slug": "cursor-button",
+	"description": "Adds a Cursor button to the Local interface.",
+	"renderer": "lib/renderer.js",
+	"main": "lib/main.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Asikur22/local-addon-cursor-button"
+	},
+	"license": "GPL-3.0",
+	"scripts": {
+		"build": "tsc --skipLibCheck",
+		"watch": "watchexec 'npm run build'"
+	},
+	"devDependencies": {
+		"electron": "^39.2.5",
+		"typescript": "^4.9.5"
+	},
+	"dependencies": {
+		"@getflywheel/local-components": "^17.8.0"
+	},
+	"bundledDependencies": [
+		"@getflywheel/local-components"
+	],
+	"engines": {
+		"local-by-flywheel": "^6.5.2"
+	},
+	"bundleDependencies": [
+		"@getflywheel/local-components"
+	]
+}
