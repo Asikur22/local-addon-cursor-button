@@ -7,7 +7,6 @@ export default function (context) {
     hooks.addContent('SiteInfo_Top_TopRight', (site) => (
         <TextButton onClick={() => {
             try {
-                console.log('Cursor button clicked. Site:', site);
                 if (!site) {
                     alert('Cursor Addon Error: site object is undefined.');
                     return;
@@ -24,7 +23,6 @@ export default function (context) {
                 if (process.platform === 'darwin') {
                     const bundleId = 'com.todesktop.230313mzl4w4u92';
 
-                    console.log('Spawning open with bundleId:', bundleId, 'and url:', url);
                     const child = spawn('open', ['-b', bundleId, url], {
                         detached: true,
                         stdio: 'ignore'
@@ -50,7 +48,6 @@ export default function (context) {
                             break;
                         }
                     }
-                    console.log('Spawning Cursor on Windows:', cursorPath, 'and url:', url);
                     const child = spawn(cursorPath, [url], {
                         detached: true,
                         stdio: 'ignore'
@@ -62,7 +59,6 @@ export default function (context) {
                     child.unref();
                 } else {
                     // Linux / other fallback
-                    console.log('Spawning Cursor on Linux/other with url:', url);
                     const child = spawn('cursor', [url], {
                         detached: true,
                         stdio: 'ignore'
